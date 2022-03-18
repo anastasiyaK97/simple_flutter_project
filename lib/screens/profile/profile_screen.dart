@@ -34,12 +34,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBarContainer(
-        size: 52,
-        child: profileAppBar(context, widget.title),
-      ),
-      backgroundColor: Colors.white,
-      body: ProfileBody(sections: sections),
-    );
+        appBar: appBarContainer(
+            size: 52,
+            child: profileAppBar(context, widget.title),
+            context: context),
+        backgroundColor: Colors.white,
+        body: Container(
+          margin: const EdgeInsets.only(left: 16, right: 16, top: 8),
+          child: ProfileBody(sections: sections),
+        ));
   }
 }

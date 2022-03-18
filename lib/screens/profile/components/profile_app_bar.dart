@@ -9,7 +9,7 @@ AppBar profileAppBar(context, String mainTitle) {
     backgroundColor: topBarBackground,
     elevation: 0,
     flexibleSpace: appBarWithActions(
-      child: RobotoBoldText(text: mainTitle, size: 24, color: blackText),
+      child: RobotoBoldText(text: mainTitle, size: 16, color: blackText),
     ),
     centerTitle: false,
   );

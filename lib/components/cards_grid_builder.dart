@@ -9,7 +9,7 @@ GridView buildCardsGridView(BuildContext context, List<dynamic> cards) {
   const double height = 103;
   return GridView.builder(
     itemCount: cards.length,
-    padding: const EdgeInsets.only(top: 0),
+    padding: const EdgeInsets.all(0),
     reverse: false,
     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
       crossAxisCount: 2,
@@ -36,19 +36,19 @@ Card gridCardItem(BuildContext context, item) {
       color: HexColor.fromHex(
           hexString: item.color, defaultColor: defaultQuickCardColor),
       child: Stack(children: [
-        Padding(
-            padding: const EdgeInsets.only(left: 10, top: 8),
-            child: MontserratSemiBoldText(text: item.name, size: 13, color: white),
-        ),
         Positioned.fill(
           child: Align(
             alignment: Alignment.bottomRight,
             child: Image.network(item.imageUrl, fit: BoxFit.contain,
                 errorBuilder: (BuildContext context, Object exception,
                     StackTrace? stackTrace) {
-              return const Text('');
-            }),
+                  return const Text('');
+                }),
           ),
+        ),
+        Padding(
+            padding: const EdgeInsets.only(left: 10, top: 8),
+            child: MontserratSemiBoldText(text: item.name, size: 13, color: white),
         ),
       ]));
 }

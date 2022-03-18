@@ -17,7 +17,6 @@ class ProfileSectionScreen extends StatefulWidget {
 }
 
 class _ProfileSectionScreenState extends State<ProfileSectionScreen> {
-
   List categories = [];
 
   @override
@@ -39,10 +38,13 @@ class _ProfileSectionScreenState extends State<ProfileSectionScreen> {
     return Scaffold(
         appBar: appBarContainer(
             size: 85,
-            child: sectionAppBar(context, widget.section.name)),
+            child: sectionAppBar(context, widget.section.name),
+            context: context),
         backgroundColor: Colors.white,
-        body: SectionBody(categories: categories,)
-    );
+        body: Container(
+            margin: const EdgeInsets.only(left: 16, right: 16, top: 8),
+            child: SectionBody(
+              categories: categories,
+            )));
   }
-
 }

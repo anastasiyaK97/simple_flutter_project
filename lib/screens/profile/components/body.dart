@@ -13,7 +13,7 @@ class ProfileBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Flexible(child: buildCardsGridView(context, sections))
+      child: Expanded(child: buildCardsGridView(context, sections))
     );
   }
 }
